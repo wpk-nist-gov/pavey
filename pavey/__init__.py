@@ -182,7 +182,7 @@ def _setup_Weight_Ave_Var_Cov(ave, weights, var, cov, axis, dtype):
     if Cov is not None:
         assert Cov.shape[0] == Ave.shape[0]
         assert Cov.shape[1:] == Ave.shape[1:]*2
-        
+
     # weights
     if weights is None:
         weights = np.ones(Ave.shape[0], dtype=dtype)
@@ -518,9 +518,9 @@ def cumave(ave, w, axis=0, var=None):
     Parameters
     ----------
     ave : array-like
-    
+
     var : array-like (or None)
-    
+
     w : 1d-array or scalar
     weights
 
@@ -748,7 +748,7 @@ class _RunningStats(object):
     def class_var(self):
         """returns var or cov"""
         raise ValueError('implement in child return e.g. self.var() or self.cov()')
-    
+
     def weight(self):
         """total weight"""
         return self._W
