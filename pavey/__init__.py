@@ -50,7 +50,6 @@ def weighted_var(x, w, axis=None, axis_sum=None, unbiased=True, **kwargs):
         w1 = w.sum(axis=axis_sum)
         w2 = (w * w).sum(axis=axis_sum)
         m2 *= w1 * w1 / (w1 * w1 - w2)
-
     return m1, m2
 
 
@@ -634,7 +633,7 @@ class _RunningStats(object):
         self._V = np.zeros(self.var_shape, dtype=self.dtype)
         self._W = np.zeros(self.shape, dtype=self.dtype)
 
-    def zero_like(self):
+    def zeros_like(self):
         """easy way to create zero object like self"""
         return self.__class__(shape=self.shape, dtype=self.dtype)
 
@@ -1147,7 +1146,7 @@ class RunningStatsList(object):
                 if e-s < min_len:
                     break
 
-            L.append(sum(self[s:e],self[0].zero_like()))
+            L.append(sum(self[s:e],self[0].zeros_like()))
             if e >= len(self):
                 break
             s += block_size

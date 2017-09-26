@@ -1,5 +1,5 @@
 from builtins import *
-import RunningStats as RS
+import pavey as RS
 import numpy as np
 
 
