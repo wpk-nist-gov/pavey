@@ -19,3 +19,5 @@ $ export PYTHONPATH=/some/dir/pavey:$PYTHONPATH
 #+END_EXAMPLE
 
 * Examples
+
+[[file:examples/Combining_statistics.ipynb][Combining statistics]]

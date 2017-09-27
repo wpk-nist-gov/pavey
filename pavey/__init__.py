@@ -1,4 +1,4 @@
-from __future__ import division
+from __future__ import division, absolute_import, print_function
 from builtins import *
 import numpy as np
 import collections
@@ -669,6 +669,12 @@ class _RunningStats(object):
         """
         push multiple stats to self along axis
         """
+
+        w = np.asanyarray(w)
+        a = np.asanyarray(a)
+        v = np.asanyarray(v)
+
+
         nsamp = a.shape[axis]
         assert w.shape[axis] == nsamp
         assert v.shape[axis] == nsamp
